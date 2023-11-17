@@ -12,16 +12,29 @@
 <body>
     <div class="container">
         <h1>To-Do App</h1>
+        <button onclick="exportToExcel()">Export to Excel</button>
         <div class="add-task-container">
-            <input type="text" id="new-task" placeholder="Add a new task"
-           
-            >
+            <input type="text" id="new-task" placeholder="Add a new task">
             <button onclick="addTask()">Add</button>
+           
         </div>
+        <button id = "activeTask" >Active Task</button>
+        <button id = "completeTask" >Complete Task</button>
         <div id="task-container">
             <!-- Tasks will be dynamically added here -->
         </div>
-        <button onclick="exportToExcel()">Export to Excel</button>
+        <div id="completed-task-container">
+            <!-- Completed tasks will be dynamically added here -->
+        </div>
+        
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditModal()">&times;</span>
+                <label for="edited-task">Edit Task:</label>
+                <input type="text" id="edited-task">
+                <button onclick="saveEditedTask()">Save</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
